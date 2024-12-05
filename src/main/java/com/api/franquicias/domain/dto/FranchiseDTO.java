@@ -1,15 +1,14 @@
-package com.api.franquicias.domain;
+package com.api.franquicias.domain.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-public class Branch {
-
+@Builder
+public class FranchiseDTO {
+    private String name;
 }
