@@ -1,5 +1,6 @@
 package com.api.franquicias.application.service;
 
+import com.api.franquicias.application.mappers.FranchiseMapper;
 import com.api.franquicias.domain.dto.FranchiseDTO;
 import com.api.franquicias.domain.entity.Franchise;
 import com.api.franquicias.infrastructure.repository.FranchiseRepository;
@@ -11,17 +12,17 @@ import org.springframework.stereotype.Service;
 public class FranchiseService {
 
     private final FranchiseRepository franchiseRepository;
-
-    public Franchise addFranchise(FranchiseDTO franchiseDTO) {
-        return franchiseRepository.save(Franchise.builder()
+    private final FranchiseMapper franchiseMapper;
+    public FranchiseDTO addFranchise(FranchiseDTO franchiseDTO) {
+        return franchiseMapper.toDto(franchiseRepository.save(Franchise.builder()
                 .name(franchiseDTO.getName())
-                .build());
+                .build()));
     }
 
-    public Franchise updateFranchiseName(Long franchiseId, String name) {
+    public FranchiseDTO updateFranchiseName(Long franchiseId, String name) {
         Franchise franchise = franchiseRepository.findById(franchiseId)
                 .orElseThrow(() -> new RuntimeException("Not Found Element"));
         franchise.setName(name);
-        return franchiseRepository.save(franchise);
+        return franchiseMapper.toDto(franchiseRepository.save(franchise));
     }
 }

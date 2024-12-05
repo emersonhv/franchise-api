@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Builder
 public class Branch {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
