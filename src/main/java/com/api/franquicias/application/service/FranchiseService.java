@@ -1,16 +1,15 @@
-package com.api.franquicias.service;
+package com.api.franquicias.application.service;
 
 import com.api.franquicias.domain.dto.FranchiseDTO;
 import com.api.franquicias.domain.entity.Franchise;
 import com.api.franquicias.infrastructure.repository.FranchiseRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
 public class FranchiseService {
-    @Autowired
+
     private final FranchiseRepository franchiseRepository;
 
     public Franchise addFranchise(FranchiseDTO franchiseDTO) {

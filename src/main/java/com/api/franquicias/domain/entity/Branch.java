@@ -20,6 +20,9 @@ public class Branch {
     private Long id;
     @Column(nullable = false)
     private String name;
+    @ManyToOne
+    @JoinColumn(name = "franchise_id")
+    private Franchise franchise;
     @OneToMany(mappedBy = "branch", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Product> products = new ArrayList<>();
 }

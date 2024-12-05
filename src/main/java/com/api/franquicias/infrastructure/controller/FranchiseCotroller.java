@@ -2,7 +2,7 @@ package com.api.franquicias.infrastructure.controller;
 
 import com.api.franquicias.domain.dto.FranchiseDTO;
 import com.api.franquicias.domain.entity.Franchise;
-import com.api.franquicias.service.FranchiseService;
+import com.api.franquicias.application.service.FranchiseService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
