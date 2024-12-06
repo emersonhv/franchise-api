@@ -54,7 +54,6 @@ public class ProductService {
         );
     }
 
-    @Cacheable(value = "productsTop", key = "#franchiseId")
     public List<ProductDTO> getTopProducts(Long franchiseId) {
         Franchise franchise = franchiseRepository.findById(franchiseId)
                 .orElseThrow(() -> new RuntimeException("Not Found Element"));
