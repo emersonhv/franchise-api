@@ -1,7 +1,6 @@
 package com.api.franquicias.infrastructure.controller;
 
 import com.api.franquicias.domain.dto.BranchDTO;
-import com.api.franquicias.domain.entity.Branch;
 import com.api.franquicias.application.service.BranchService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
